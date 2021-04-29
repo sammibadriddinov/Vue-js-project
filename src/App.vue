@@ -1,20 +1,28 @@
 <template>
   <div class="container">
     <Header title="Track" />
+    <Tasks @delete-task="deleteTask" :tasks='tasks' />
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import Tasks from './components/Tasks'
 
 export default {
   name: "App",
   components: {
-    Header
+    Header,
+    Tasks
   },
   data() {
     return {
       tasks: [] 
+    }
+  },
+  methods: {
+    deleteTask(id) {
+      console.log('task', id)
     }
   },
   created() {
@@ -32,10 +40,10 @@ export default {
         reminder: true
       },
       {
-        id: 1,
+        id: 3,
         text: 'Chelsea was created',
         day: 'march 1st march 1919 at 2:30pm',
-        reminder: true
+        reminder: false
       },
     ]
   }
@@ -44,7 +52,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400;1,500&display=swap');
-  * {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
