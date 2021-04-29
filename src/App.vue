@@ -11,6 +11,33 @@ export default {
   name: "App",
   components: {
     Header
+  },
+  data() {
+    return {
+      tasks: [] 
+    }
+  },
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: 'Liverpool was created',
+        day: 'march 1st march 1989 at 2:30pm',
+        reminder: true
+      },
+      {
+        id: 2,
+        text: 'Barcelona was created',
+        day: 'january 1st march 1989 at 1:30pm',
+        reminder: true
+      },
+      {
+        id: 1,
+        text: 'Chelsea was created',
+        day: 'march 1st march 1919 at 2:30pm',
+        reminder: true
+      },
+    ]
   }
 };
 </script>
